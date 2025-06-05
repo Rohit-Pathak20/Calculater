@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beautiful Calculator</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: linear-gradient(to right, #e0c3fc, #8ec5fc);
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .frame {
+            width: 360px;
+            padding: 25px;
+            background-color: #f7f7f7;
+            border-radius: 20px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+        }
+
+        .heading {
+            text-align: center;
+            font-size: 28px;
+            font-weight: bold;
+            margin-bottom: 20px;
+            color: #4a4a4a;
+        }
+
+        #display {
+            width: 100%;
+            height: 60px;
+            font-size: 24px;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 10px;
+            background-color: #ffffff;
+            box-shadow: inset 2px 2px 5px #d1d1d1, inset -2px -2px 5px #ffffff;
+            text-align: right;
+            margin-bottom: 20px;
+        }
+
+        .button-group {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 15px;
+        }
+
+        .button {
+            flex: 1;
+            height: 60px;
+            margin: 5px;
+            font-size: 20px;
+            font-weight: bold;
+            border: none;
+            border-radius: 12px;
+            background: #f0f0f0;
+            box-shadow: 4px 4px 10px #c8c8c8, -4px -4px 10px #ffffff;
+            transition: all 0.2s ease-in-out;
+        }
+
+        .button:hover {
+            background-color: #dcdcdc;
+            cursor: pointer;
+        }
+
+        .button:active {
+            box-shadow: inset 2px 2px 5px #bababa, inset -2px -2px 5px #ffffff;
+            transform: scale(0.97);
+        }
+
+        .button[value="="] {
+            background-color: #6c63ff;
+            color: white;
+        }
+
+        .button[value="C"] {
+            background-color: #ff6b6b;
+            color: white;
+        }
+
+        .button[value="="]:hover,
+        .button[value="C"]:hover {
+            opacity: 0.9;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="frame">
+        <p class="heading">Calculator</p>
+        <input type="text" id="display" disabled>
+
+        <div class="button-group">
+            <input class="button" type="button" value="9" onclick="display.value += '9'">
+            <input class="button" type="button" value="8" onclick="display.value += '8'">
+            <input class="button" type="button" value="7" onclick="display.value += '7'">
+            <input class="button" type="button" value="+" onclick="display.value += '+'">
+        </div>
+        <div class="button-group">
+            <input class="button" type="button" value="6" onclick="display.value += '6'">
+            <input class="button" type="button" value="5" onclick="display.value += '5'">
+            <input class="button" type="button" value="4" onclick="display.value += '4'">
+            <input class="button" type="button" value="-" onclick="display.value += '-'">
+        </div>
+        <div class="button-group">
+            <input class="button" type="button" value="3" onclick="display.value += '3'">
+            <input class="button" type="button" value="2" onclick="display.value += '2'">
+            <input class="button" type="button" value="1" onclick="display.value += '1'">
+            <input class="button" type="button" value="*" onclick="display.value += '*'">
+        </div>
+        <div class="button-group">
+            <input class="button" type="button" value="C" onclick="display.value = ''">
+            <input class="button" type="button" value="0" onclick="display.value += '0'">
+            <input class="button" type="button" value="/" onclick="display.value += '/'">
+            <input class="button" type="button" value="=" onclick="try { display.value = eval(display.value) } catch { display.value = 'Error' }">
+        </div>
+    </div>
+</body>
+
+</html>
+
+</body>
+</html>
